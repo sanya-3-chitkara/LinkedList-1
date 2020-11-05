@@ -1,6 +1,6 @@
 //coding ninjas platform
 
-
+//***********Iterative Method*************//
 Node* removeDuplicates(Node *head)
 {
     Node *t1=head;
@@ -17,6 +17,22 @@ Node* removeDuplicates(Node *head)
       {
         t1=t1->next;
       }
+    }
+    return head;
+}
+//******************Recursive Method*****************//
+Node * removeDuplicates(Node *head)
+{
+    Node *temp=head;
+    if(temp->next==nullptr)
+    {
+        return temp;
+    }
+    Node *smallOutput=removeDuplicates(temp->next);
+    if(temp->data==smallOutput->data)
+    {
+        temp->next=smallOutput->next;
+        delete smallOutput;
     }
     return head;
 }
