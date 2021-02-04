@@ -1,5 +1,5 @@
 //coding ninjas platform
-
+/*First Approach********/
 Node* reverse(Node *head)
 {
   if(head->next==NULL)
@@ -36,6 +36,28 @@ bool isPalindrome(Node *head)
       }
       head1=head1->next;
       head2=head2->next;
+    }
+    return true;
+}
+/**************Another Approach*******/
+#include <vector>
+bool isPalindrome(Node *head){
+    if(head==NULL) return true;
+    Node *temp=head;
+    // int l=len(head);
+    vector<int> v;
+    v.push_back(temp->data);
+    while(temp->next!=nullptr){
+        temp=temp->next;
+        v.push_back(temp->data);
+    }
+    int i=0,j=v.size()-1;
+    while(i<j){
+        if(v[i] != v[j]){
+            return false;
+        }
+        i++;
+        j--;
     }
     return true;
 }
