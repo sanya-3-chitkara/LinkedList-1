@@ -1,5 +1,5 @@
 //coding ninjas platform
-
+//pls return appended list it is returning address
 
 int length(Node *head)
 {
